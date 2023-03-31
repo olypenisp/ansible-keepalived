@@ -1,5 +1,5 @@
 {% if vrrp_instances is defined %}
-{% for item in vrrp_instances %}
+{% for item in vrrp_instances.values() %}
 vrrp_instance {{ item.name }} {
   virtual_router_id {{ item.virtual_router_id | int | abs }}
   interface {{ item.interface }}
