@@ -32,10 +32,10 @@ global_defs {
   vrrp_skip_check_adv_addr
 {% endif %}
 {% if global_defs.vrrp_garp_interval is defined %}
-  vrrp_garp_interval {{ global_defs.vrrp_garp_interval | float(default=0.01) }}
+  vrrp_garp_interval {{ global_defs.vrrp_garp_interval }}
 {% endif %}
 {% if global_defs.vrrp_gna_interval is defined %}
-  vrrp_gna_interval {{ global_defs.vrrp_gna_interval | float(default=0.00001) }}
+  vrrp_gna_interval {{ global_defs.vrrp_gna_interval }}
 {% endif %}
 {% if global_defs.vrrp_mcast_group4 is defined %}
   vrrp_mcast_group4 {{ global_defs.vrrp_mcast_group4 }}
