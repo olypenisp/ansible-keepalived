@@ -3,6 +3,9 @@ global_defs {
 {% if global_defs.enable_script_security is defined and global_defs.enable_script_security == True %}
   enable_script_security
 {% endif %}
+{% if global_defs.max_auto_priority is defined %}
+  max_auto_priority {{ global_defs.max_auto_priority }}
+{% endif %}
 {% if global_defs.lvs_sync_daemon is defined %}
   lvs_sync_daemon {{ global_defs.lvs_sync_daemon }}
 {% endif %}
