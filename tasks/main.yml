@@ -8,7 +8,7 @@
   notify: restart keepalived
 
 - name: Install keepalived (debian/ubuntu)
-  apt: name=[keepalived,vrrpd] state=latest
+  apt: name=keepalived state=latest
   when: ansible_os_family == "Debian"
   tags: keepalived
   notify: restart keepalived
@@ -17,3 +17,8 @@
   template: src=keepalived.conf.j2 dest=/etc/keepalived/keepalived.conf
   tags: keepalived
   notify: restart keepalived
+
+- name: Install vrrpd (debian/ubuntu)
+  apt: name=vrrpd state=latest
+  when: ansible_os_family == "Debian"
+  tags: keepalived
